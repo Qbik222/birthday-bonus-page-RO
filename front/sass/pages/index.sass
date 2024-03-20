@@ -23,14 +23,19 @@ body
   background: $dark-blue
   padding-top: 40px
   height: 600px
+  overflow: hidden
+
   .main
     width: 100%
     &__banner
       display: flex
       flex-direction: column
       max-width: 1550px
+      //min-width: 1400px
       margin: 0 auto
       flex-wrap: nowrap
+      transform-origin: center top
+      flex-shrink: 0
       &-text
         &-bonus
           font-family: $font-press-start2-reg
@@ -42,7 +47,6 @@ body
           transform: translate(-2%, -150%)
         &-top
           position: relative
-          font-family: $font-press-start2-reg
           font-size: 40px
           color: $dark-blue
           display: inline-flex
@@ -51,6 +55,8 @@ body
           padding: 7px 6px 1px 13px
           z-index: 10
           clip-path: polygon(2% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 0 20%)
+          span
+            font-family: $font-press-start2-reg
           span:nth-child(2)
             margin-left: 11px
           span:nth-child(3)
@@ -223,6 +229,7 @@ body
         justify-content: space-between
         padding: 0 10%
         margin-top: 10px
+        height: 42px
         &-item
           font-family: $font-press-start2-reg
           font-size: 10px
@@ -232,21 +239,21 @@ body
             color: $light-blue
           &:nth-child(2)
             color: $magenta
-          &::before
-            position: absolute
-            top: 0
-            right: 5px
-            display: block
-            content: ""
-            width: 125px
-            height: 42px
-            background: url("../img/banner-dots.svg") no-repeat 0 0/contain
-          &::after
-            position: absolute
-            top: 0
-            left: 5px
-            display: block
-            content: ""
-            width: 125px
-            height: 42px
-            background: url("../img/banner-dots.svg") no-repeat 0 0/contain
+            &::before
+              position: absolute
+              top: 0
+              right: 5px
+              display: block
+              content: ""
+              width: 125px
+              height: 100%
+              background: url("../img/banner-dots.svg") no-repeat 0 0/contain
+            &::after
+              position: absolute
+              top: 0
+              left: 5px
+              display: block
+              content: ""
+              width: 125px
+              height: 100%
+              background: url("../img/banner-dots.svg") no-repeat 0 0/contain
