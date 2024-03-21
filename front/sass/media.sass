@@ -5,6 +5,7 @@
 //          .center-subtext
 //  &-bottom
 
+///main banner
 
 @media screen and (min-width: 2200px)
   .fav-page
@@ -38,7 +39,7 @@
   .fav-page
     .main
       &__banner
-        transform: scale(1)
+        transform: scale(1.5)
         max-width: 710px
         &-right
           &::after
@@ -143,7 +144,34 @@
             &:nth-child(2)::before, &:nth-child(2)::after
               width: 83px
               height: 28px
+            &:nth-child(2)::before
+              right: 0
+            &:nth-child(2)::after
+              left: 0
 
+@media screen and (max-width: 1120px)
+  .fav-page
+    .main
+      &__banner
+        transform: scale(1.25)
+
+@media screen and (max-width: 950px)
+  .fav-page
+    .main
+      &__banner
+        transform: scale(1.1)
+
+@media screen and (max-width: 850px)
+  .fav-page
+    .main
+      &__banner
+        transform: scale(1.05)
+
+@media screen and (max-width: 768px)
+  .fav-page
+    .main
+      &__banner
+        transform: scale(1)
 
 @media screen and (max-width: 720px)
   .fav-page
@@ -295,3 +323,5 @@
       &__banner
         transform: scale(.75)
         right: 31px
+
+
