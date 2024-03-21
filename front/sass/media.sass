@@ -277,12 +277,48 @@
               max-width: 230px
             &:nth-child(2)::before, &:nth-child(2)::after
               content: none
+      &__game
+        &-machine
+          width: 385px
+          height: 540px
+          padding-top: 0
+          &-text
+            font-size: 18px
+            line-height: 18px
+            top: 40px
+          &-btn
+            padding: 1px 29px
+            font-size: 17px
+            line-height: 26px
+            bottom: 170px
+            &:active
+              bottom: 168px
+            &::before
+              height: 20px
+              bottom: 1px
+        &-playground
+          //opacity: 0
+          top: 113px
+          right: 27px
+          transform: scale(.56)
+
+@media screen and (max-width: 375px)
+  .fav-page
+    .main
+      &__game
+        &-machine
+          right: 5px
 
 @media screen and (max-width: 360px)
   .fav-page
     .main
       &__banner
         transform: scale(.95)
+      &__game
+        margin-top: -30px
+        &-machine
+          transform: scale(.9)
+          right: 12px
 
 @media screen and (max-width: 350px)
   .fav-page
@@ -296,12 +332,20 @@
       &__banner
         position: relative
         right: 3px
+      &__game
+        margin-top: -60px
+        &-machine
+          right: 25px
 
 @media screen and (max-width: 335px)
   .fav-page
     .main
       &__banner
         right: 5px
+      &__game
+        margin-top: -80px
+        &-machine
+          right: 27px
 
 @media screen and (max-width: 320px)
   .fav-page
@@ -309,6 +353,10 @@
       &__banner
         transform: scale(.85)
         right: 11px
+      &__game
+        margin-top: -100px
+        &-machine
+          right: 33px
 
 @media screen and (max-width: 305px)
   .fav-page
@@ -316,6 +364,11 @@
       &__banner
         transform: scale(.8)
         right: 20px
+      &__game
+        margin-top: -120px
+        &-machine
+          transform: scale(.83)
+          right: 41px
 
 @media screen and (max-width: 280px)
   .fav-page
@@ -323,5 +376,10 @@
       &__banner
         transform: scale(.75)
         right: 31px
+      &__game
+        margin-top: -170px
+        &-machine
+          transform: scale(.76)
+          right: 52px
 
 

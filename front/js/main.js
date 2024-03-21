@@ -9,6 +9,9 @@ const result = document.querySelector(".result"); // таблиця резуль
 const coins = document.querySelector(".coins") // батьківський елемент монеток
 const gameOver = document.querySelector(".gameOver"); // екран який відображається по закінченню гри
 
+const popupBtn = document.querySelector(".gameOver__info");
+const popupWindow = document.querySelector(".popup")
+const popupClose = document.querySelector(".popup__close");
 
 const FS = document.querySelector(".FS")
 const elemsInsideFS = FS.querySelectorAll("span") //span елементи в які записується результат FS
@@ -19,10 +22,12 @@ const elemsInsideEUR = EUR.querySelectorAll("span")  //span елементи в 
 const coin3 = document.querySelector(".coin3") // монетка яка буде спіймана першою
 const coin4 = document.querySelector(".coin4") // монетка яка буде спіймана другою
 let frameCounter = 0 // потрібен для відстежування ключових точок анімації
+// let popupHandler = 0 // відстежує відкритий попап чи ні
 startGameBtn.addEventListener("click", () => {
     startText.style.display = "none"
     hookWrap.classList.add("hook-move-horizontal"); // запуск гри
 });
+
 coin3.addEventListener("animationend", () =>{ // відстежуємо момент закінчкення анімації першого монетки для запуску циклу анімацій другої монетки
     frameCounter++ //збільшує frameCounter кожного разу коли відбувається анімація першої монетки
     // console.log(`coin ${frameCounter}`)
@@ -91,7 +96,6 @@ coin4.addEventListener("animationend", ()=>{
                         item.style.opacity = "1";
                     }, 500)
                 }, 200)
-
             }
         })
         elemsInsideEUR.forEach( (item, i)  => {
@@ -106,7 +110,6 @@ coin4.addEventListener("animationend", ()=>{
                     item.textContent = '0';
                     setTimeout(() =>{
                         item.style.opacity = "1";
-
                         // приховуємо елементи гри і відображаємо екран закінчення
                         setTimeout(() =>{
                             gameBody.style.opacity = "0"
@@ -114,6 +117,29 @@ coin4.addEventListener("animationend", ()=>{
                             coins.style.opacity = "0"
                             gameOver.style.opacity = "1"
                             gameOver.style.zIndex = "10"
+                            //логіка кнопки відкриття попапу, додається після відображення екрану закінчення гри
+                            popupBtn.addEventListener("click", () =>{
+                                document.querySelector("body").style.overflowY = "hidden"
+                                popupWindow.style.opacity = "1"
+                                popupWindow.style.zIndex = "100"
+                                // popupHandler++
+                            })
+                            //логіка кнопки закриття попапу, додається після відображення екрану закінчення гри
+                            popupClose.addEventListener("click", () =>{
+                                console.log("close")
+                                document.querySelector("body").style.overflowY = "visible"
+                                popupWindow.style.opacity = "0"
+                                popupWindow.style.zIndex = '-100'
+                                // popupHandler--
+                            })
+                            // document.addEventListener("click", (e) =>{
+                            //     if(e.target !== popupWindow && popupHandler === 1){
+                            //         console.log("close")
+                            //         document.querySelector("body").style.overflowY = "visible"
+                            //         popupWindow.style.opacity = "0"
+                            //         popupWindow.style.zIndex = '-100'
+                            //     }
+                            // })
                         }, 500)
                     }, 500)
                 }, 200)
@@ -149,3 +175,4 @@ hookWrap.addEventListener("animationend", () => {
         coin4.classList.add("coin-catch")
     }
 });
+

@@ -1,14 +1,20 @@
 $light-blue: #242496
 $playground-bg: #1D1D9A
 $info-link-bg: #2D2DBE
+$popup-bg: rgba(0,0,139, .9)
+$drop-border: #162BEA
 $blue: #000055
 $dark-blue: #00003D
 $white: #ffffff
 $green: #05C48A
+$popup-btn-bg: #05C489
+$popup-btn-bg-hover: #05b37c
 $magenta: #FF267E
 
 $font-press-start2-reg: PressStart2P-Regular, sans-serif
 $font-delta-gothic-one-reg: DelaGothicOne-Regular, sans-serif
+$font-suisseintl-semibold: SuisseIntl-SemiBold, sans-serif
+$font-suisseintl-reg: SuisseIntl-Regular, sans-serif
 
 body
   overscroll-behavior: none
@@ -16,6 +22,7 @@ body
     max-width: 100%
     height: auto
 .fav-page
+  position: relative
   width: 100%
   -webkit-tap-highlight-color: rgba(0,0,0,0)
   overscroll-behavior: none
@@ -23,9 +30,99 @@ body
   flex-direction: column
   align-items: center
   background: $dark-blue
-  padding-top: 40px
+  padding: 40px 0 20px 0
   min-height: 600px
   overflow: hidden
+  .popup
+    display: flex
+    align-items: center
+    justify-content: center
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0,0,61, .7)
+    //z-index: 100
+    opacity: 0
+    z-index: -100
+    transition: opacity .8s ease-in-out
+    &__close
+      position: absolute
+      top: 0
+      right: 0
+      transform: translate(0, -100%)
+      width: 57px
+      height: 57px
+      background: url("../img/close-popup-bg.svg") no-repeat 0 0/contain
+      cursor: pointer
+      transition: opacity .3s ease-in-out
+      user-select: none
+
+      &:hover
+        opacity: .8
+    &__wrap
+      position: relative
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      width: 500px
+      height: 310px
+      background: $popup-bg
+      padding: 15px
+      &::before
+        content: ""
+        display: block
+        width: 91%
+        height: 90%
+        position: absolute
+        top: 5.5%
+        left: 4.5%
+        background: url("../img/popup-bg.svg") no-repeat 0 0/contain
+        z-index: 0
+    &__title, &__list, &__btn
+      position: relative
+      z-index: 2
+    &__title
+      font-family: $font-delta-gothic-one-reg
+      color: $white
+      font-size: 23px
+      line-height: 23px
+      margin-bottom: 16px
+      max-width: 350px
+      text-align: center
+
+    &__list
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: flex-start
+      margin: 0 0 25px 0
+      &-item
+        font-family: $font-delta-gothic-one-reg
+        color: $white
+        max-width: 340px
+        font-size: 18px
+        line-height: 18px
+        &:first-child
+          margin-bottom: 22px
+    &__btn
+      //width: 335px
+      //height: 70px
+      font-size: 18px
+      text-transform: uppercase
+      letter-spacing: 0.08em
+      background: $popup-btn-bg
+      border-radius: 4px
+      padding: 23px 45px
+      text-decoration: none
+      color: $blue
+      transition: background-color .3s ease-in-out
+      font-family: $font-suisseintl-semibold
+      &:hover
+        cursor: pointer
+        background: $popup-btn-bg-hover
 
   .main
     width: 100%
@@ -268,6 +365,11 @@ body
         width: 694px
         height: 940px
         background: url("../img/machine-desk.png") no-repeat 0 0/contain
+        @media screen and (max-width: 700px)
+          background: url("../img/machine-mob.png") no-repeat 0 0/contain
+        @media screen and (max-width: 950px) and (orientation: landscape)
+          background: url("../img/machine-mob.png") no-repeat 0 0/contain
+
         &-btn
           //background: url("../img/machine-btn-bg.svg") no-repeat 0 0/contain
           //max-width: 266px
@@ -354,7 +456,6 @@ body
             left: 50%
             transform: translate(-50%, 0)
             background: url("../img/game-line.svg") no-repeat 0 0/contain
-
           .hook-wrap
             position: absolute
             top: 14px
@@ -453,7 +554,6 @@ body
         .FS, .RFB, .EUR
           font-family: $font-press-start2-reg
           text-transform: uppercase
-
           span
             font-family: $font-press-start2-reg
         .gameOver
@@ -469,6 +569,24 @@ body
           color: $white
           opacity: 0
           transition: opacity .4s ease-in-out .4s
+          &::before
+            content: ""
+            display: block
+            width: 40px
+            height: 45px
+            position: absolute
+            top: 32px
+            right: 23px
+            background: url("../img/right-balls.svg") no-repeat 0 0/contain
+          &::after
+            content: ""
+            display: block
+            width: 39px
+            height: 36px
+            position: absolute
+            top: 44px
+            left: 29px
+            background: url("../img/left-balls.svg") no-repeat 0 0/contain
           &__title,&__text, &__info
             font-size: 14px
             line-height: 18px
@@ -489,6 +607,39 @@ body
             text-transform: uppercase
             color: inherit
             background: $info-link-bg
+            &:hover
+              cursor: pointer
+  .details, .rules
+    max-width: 1250px
+    width: 90%
+
+  .drop
+    color: $white
+    &__btn
+      padding: 20px 30px
+      border: 1px solid $drop-border
+      font-family: $font-suisseintl-reg
+      text-transform: uppercase
+      font-size: 22px
+
+    &__list
+      border: 1px solid $drop-border
+      margin-top: 6px
+      padding: 20px 30px 30px 30px
+      &-item
+        font-family: $font-suisseintl-reg
+        font-size: 20px
+        &:nth-child(2), &:nth-child(3)
+          margin-top: 30px
+
+  .rules
+    margin-top: 14px
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,13 @@
 .fav-page
+    .popup
+        .popup__wrap
+            .popup__close
+            .popup__title KAKO OSTVARITI BONUS:
+            ol.popup__list
+                li.popup__list-item Ući u korisnički račun na svoj rođendan;
+                li.popup__list-item Aktivirati bonuse: <br> 10 RFB i 25 FS
+            a(href="").popup__btn na svoj osobni račun
+
     .main
         .main__banner
             .main__banner-wrap
@@ -56,11 +65,22 @@
                                 .RFB RFB 10
                                 .EUR EUR 10
                         .gameOver__text koje možeš iskoristiti <br> u naredna tri dana.
-                        a(href="#").gameOver__info KAKO OSTVARITI BONUS?
+                        .gameOver__info KAKO OSTVARITI BONUS?
 
                 .main__game-machine-btn početak
     .details
-        details.details__drop
-            summary.drop-btn
-                span
+        details.drop
+            summary.drop__btn
+                span Detalji
+            ul.drop__list
+                li.drop__list-item 1. Nakon što je korisnik e-mailom primio poziv za sudjelovanje, može aktivirati i iskoristiti bonuse u roku od 3 dana.
+                li.drop__list-item 2. Za korištenje besplatnih vrtnji, potrebno je uplatiti od 5 eura, minimalna cijena 1 FS je 0,2 eura.
+                li.drop__list-item Detaljnije informacije nalaze se u pravilima ispod.
     .rules
+        details.drop
+            summary.drop__btn
+                span Pravila
+            ul.drop__list
+                li.drop__list-item 1. Nakon što je korisnik e-mailom primio poziv za sudjelovanje, može aktivirati i iskoristiti bonuse u roku od 3 dana.
+                li.drop__list-item 2. Za korištenje besplatnih vrtnji, potrebno je uplatiti od 5 eura, minimalna cijena 1 FS je 0,2 eura.
+                li.drop__list-item Detaljnije informacije nalaze se u pravilima ispod.
