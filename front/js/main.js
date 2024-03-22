@@ -56,9 +56,9 @@ coin3.addEventListener("animationend", () =>{ // відстежуємо моме
                     item.style.opacity = "0";
                     item.textContent = '5';
                     setTimeout(() =>{
-                            item.style.opacity = "1";
-                            hookWrap.classList.add("hook-move-horizontal2"); // ініціюємо анімацію руху до другої монетки
-                        }, 500)
+                        item.style.opacity = "1";
+                        hookWrap.classList.add("hook-move-horizontal2"); // ініціюємо анімацію руху до другої монетки
+                    }, 500)
                 }, 200)
 
             }
@@ -175,4 +175,3 @@ hookWrap.addEventListener("animationend", () => {
         coin4.classList.add("coin-catch")
     }
 });
-
