@@ -22,10 +22,15 @@ const elemsInsideEUR = EUR.querySelectorAll("span")  //span елементи в 
 const coin3 = document.querySelector(".coin3") // монетка яка буде спіймана першою
 const coin4 = document.querySelector(".coin4") // монетка яка буде спіймана другою
 let frameCounter = 0 // потрібен для відстежування ключових точок анімації
+let animationHandler = false
 // let popupHandler = 0 // відстежує відкритий попап чи ні
 startGameBtn.addEventListener("click", () => {
-    startText.style.display = "none"
-    hookWrap.classList.add("hook-move-horizontal"); // запуск гри
+    if (!animationHandler){
+        animationHandler = true
+        startText.style.display = "none"
+        hookWrap.classList.add("hook-move-horizontal"); // запуск гри
+    }
+
 });
 
 coin3.addEventListener("animationend", () =>{ // відстежуємо момент закінчкення анімації першого монетки для запуску циклу анімацій другої монетки
