@@ -30,6 +30,10 @@ startGameBtn.addEventListener("click", () => {
         startText.style.display = "none"
         hookWrap.classList.add("hook-move-horizontal"); // запуск гри
     }
+    if(animationHandler){
+        startGameBtn.classList.add("btn-off")
+    }
+
 
 });
 

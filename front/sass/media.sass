@@ -226,7 +226,6 @@
       &__btn
         font-size: 16px
         padding: 19px 36px
-
     .main
       background: url("../img/bg-mob.png") no-repeat -3vw 155px/cover
       background-size: 107.2vw 169vw
@@ -357,22 +356,33 @@
             &::before
               height: 20px
               bottom: 1px
+        .btn-off
+          &:active
+            bottom: 170px
         &-playground
           //opacity: 0
           top: 113px
           right: 27px
           transform: scale(.56)
+
     .drop
       &__btn
         padding: 15px
         font-size: 17px
+
+      &__sublist
+        &-item
+          font-size: 16px
+          line-height: 26px
+          &:not(:first-child)
+            margin-top: 15px
       &__list
         padding: 22px 20px 26px 16px
         &-item
           font-size: 16px
           line-height: 26px
-          &:nth-child(2), &:nth-child(3)
-            margin-top: 20px
+          &:not(:first-child)
+            margin-top: 15px
 
 @media screen and (max-width: 700px) and (min-height: 600px) and (min-width: 650px)
   .fav-page
@@ -419,8 +429,15 @@
       &__banner
         transform: scale(.9)
     .drop
+      &__sublist
+        &-item
+          font-size: 14px
+          line-height: 20px
       &__list
         padding: 15px
+        &-item
+          font-size: 14px
+          line-height: 20px
 
 @media screen and (max-width: 337px)
   .fav-page
