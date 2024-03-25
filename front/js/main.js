@@ -37,6 +37,12 @@ startGameBtn.addEventListener("click", () => {
 
 });
 
+// document.querySelector(".dark-theme").addEventListener('click', () =>{
+//     document.querySelector("body").classList.toggle("dark")
+// })
+
+
+
 coin3.addEventListener("animationend", () =>{ // відстежуємо момент закінчкення анімації першого монетки для запуску циклу анімацій другої монетки
     frameCounter++ //збільшує frameCounter кожного разу коли відбувається анімація першої монетки
     // console.log(`coin ${frameCounter}`)

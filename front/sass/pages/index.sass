@@ -10,6 +10,7 @@ $green: #05C48A
 $popup-btn-bg: #05C489
 $popup-btn-bg-hover: #05b37c
 $magenta: #FF267E
+$dark-theme-color: #111218
 
 $font-press-start2-reg: PressStart2P-Regular, sans-serif
 $font-delta-gothic-one-reg: DelaGothicOne-Regular, sans-serif
@@ -21,6 +22,28 @@ body
   img
     max-width: 100%
     height: auto
+.dark-theme
+  position: fixed
+  top: 0
+  right: 0
+  z-index: 1000
+  background: white
+  font-size: 16px
+
+.dark
+  .fav-page
+    background: $dark-theme-color
+    .popup
+      background: rgba(17,18,24, .7)
+    .main
+      &::before
+        background: linear-gradient(180deg, rgba(0, 0, 61, 0.00) 0%, #111218 100%)
+      &__game
+        @media screen and (min-width: 1300px)
+          background: url("../img/game-bg-dark.png") no-repeat 50% 0/cover
+        @media screen and (min-width: 1025px)
+          background: url("../img/game-bg-tab-dark.png") no-repeat 50% 0/cover
+
 .fav-page
   position: relative
   width: 100%
