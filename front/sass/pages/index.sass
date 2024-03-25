@@ -8,7 +8,7 @@ $dark-blue: #00003D
 $white: #ffffff
 $green: #05C48A
 $popup-btn-bg: #05C489
-$popup-btn-bg-hover: #05b37c
+$popup-btn-bg-hover: #00EAA1
 $magenta: #FF267E
 $dark-theme-color: #111218
 
@@ -472,6 +472,17 @@ body
             width: 100%
             height: 29px
             background: linear-gradient(180deg, #05C48A 0%, rgba(8, 16, 123, 0.00) 100%)
+          &:hover
+            cursor: pointer
+            &::after
+              filter: drop-shadow(0px 0px 3px #3BFFC3)
+              background: url("../img/machine-btn-bg-hover.svg") no-repeat 0 0/contain
+              //background: url("../img/machine-btn-bg-hover.png") no-repeat 0 0/contain
+            &::before
+              background: linear-gradient(180deg, #3BFFC3 0%, rgba(8, 16, 123, 0.00) 100%)
+          &:active
+            bottom: 278px
+            //filter: drop-shadow(0px 0px 0px #3BFFC3)
           &::after
             content: ""
             display: block
@@ -481,18 +492,9 @@ body
             top: 0
             left: 0
             z-index: -1
+            filter: none
             //filter: drop-shadow(0px 0px 19px #3BFFC3)
             background: url("../img/machine-btn-bg.svg") no-repeat 0 0/contain
-          &:hover
-            cursor: pointer
-            &::after
-              filter: drop-shadow(0px 0px 12px #3BFFC3)
-              background: url("../img/machine-btn-bg-hover.svg") no-repeat 0 0/contain
-            &::before
-              background: linear-gradient(180deg, #3BFFC3 0%, rgba(8, 16, 123, 0.00) 100%)
-          &:active
-            bottom: 278px
-            //filter: drop-shadow(0px 0px 0px #3BFFC3)
         .btn-off
           &:active
             bottom: 280px
