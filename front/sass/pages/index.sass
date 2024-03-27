@@ -105,7 +105,6 @@ body
         z-index: 0
         @media screen and (max-width: 700px)
           background: url("../img/popup-bg-mob.svg") no-repeat 0 0/contain
-
     &__title, &__list, &__btn
       position: relative
       z-index: 2
@@ -117,7 +116,6 @@ body
       margin-bottom: 16px
       max-width: 350px
       text-align: center
-
     &__list
       display: flex
       flex-direction: column
@@ -146,7 +144,6 @@ body
       &:hover
         cursor: pointer
         background: $popup-btn-bg-hover
-
   .main
     position: relative
     width: 100%
@@ -169,7 +166,6 @@ body
       display: flex
       flex-direction: column
       max-width: 1550px
-      //min-width: 1400px
       margin: 0 auto
       flex-wrap: nowrap
       transform-origin: center top
@@ -260,7 +256,6 @@ body
           background: url("../img/top-text-decor.png") no-repeat 0 0/contain
       &-right
         position: relative
-        //max-width: 40%
         display: flex
         min-height: 100%
         padding: 23px 15px 0 0
@@ -283,7 +278,6 @@ body
           width: 135px
           height: 16px
           background: url("../img/top-decor.svg") no-repeat 0 0/contain
-          //transform: translate(0, -150%)
         &-img
           margin: auto 32px 0 0
           width: 403px
@@ -302,10 +296,8 @@ body
           position: absolute
           bottom: 0
           left: 0
-
       &-icons
         display: flex
-        //padding-top: 25px
         &-left
           position: relative
           display: flex
@@ -678,7 +670,6 @@ body
             font-size: 18px
             line-height: 23.4px
             border: 2px solid $white
-
           &__text
             margin-bottom: 11px
             max-width: 360px
@@ -717,6 +708,8 @@ body
       display: flex
       justify-content: space-between
       user-select: none
+      span
+        font-family: $font-suisseintl-semibold
       &:hover
         cursor: pointer
       &::before
@@ -726,7 +719,6 @@ body
         height: 24px
         background: url("../img/arrow.svg") no-repeat 0 0/contain
         order: 2
-
     &__sublist
       padding-left: 15px
       &-item
@@ -756,20 +748,6 @@ body
         margin-left: 10px
   .rules
     margin-top: 14px
-
-//.ro
-//  .main
-//    &__banner
-//      &::before
-//        width: 550px
-//      &-left
-//        &::before
-//          top: 25px
-//          right: -310px
-//      &-text
-//        &-top
-//          span:not(:first-child)
-//            margin-left: 17px
 
 @keyframes start-text-blick
   0%, 100%
